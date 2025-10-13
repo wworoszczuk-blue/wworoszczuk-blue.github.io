@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(2 6 23); /* slate-950 */
+  color: white;
+  font-family: system-ui, sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #63C979;
+  color: #020205;
+}

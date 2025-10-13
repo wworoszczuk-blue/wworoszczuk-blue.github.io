@@ -1,0 +1,285 @@
+<head>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<section id="services" class="relative">
+
+  <div class="relative z-10 w-full">
+    <div class="w-full">
+        <div class="services-wrapper">
+        
+            <!-- LEFT COLUMN -->
+            <div class="services-left ml-4">
+                <div class="mb-6">
+                    <span class="inline-block text-elivion-green text-sm font-header uppercase tracking-widest mb-4">
+                    What We Offer
+                    </span>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-header leading-tight">
+                    Our <span class="text-elivion-green">Services</span>
+                    </h2>
+                </div>
+
+                <!-- PROGRESS INDICATORS -->
+                <div class="mt-12 space-y-6">
+                    {['Enterprise Solutions', 'Corporate Learning & Leadership', 'Talent & Recruitment', 'People Development', 'Training & Workshops'].map((service, index) => (
+                    <div class="flex items-center space-x-4 group cursor-pointer service-indicator" data-service={index}>
+                        <div class="flex-shrink-0 w-4 h-4 bg-slate-600 rounded-full group-[.active]:bg-elivion-green group-[.active]:scale-150 transition-all duration-500 group-[.active]:ring-4 group-[.active]:ring-emerald-400/30 indicator-dot"></div>
+                        <span class="text-slate-400 group-[.active]:text-white group-[.active]:font-medium transition-all duration-500 text-lg indicator-text">
+                        {service}
+                        </span>
+                    </div>
+                    ))}
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="services-right">
+                <!-- SERVICE 1 -->
+                <div class="service-card group" data-service="0">
+                    <div class="relative p-8 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl backdrop-blur-xl transition-all duration-700 hover:border-elivion-green/30 hover:transform hover:-translate-y-2 service-card-content">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined">
+                            hub
+                        </span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4">
+                        Enterprise AI Solutions
+                    </h3>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        Design and deployment of AI platforms tailored to corporate ecosystems, from secure infrastructure and model integration to advanced analytics that inform decision-making and operations.
+                    </p>
+                    </div>
+                </div>
+
+                <!-- SERVICE 2 -->
+                <div class="service-card group" data-service="1">
+                    <div class="relative p-8 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl backdrop-blur-xl transition-all duration-700 hover:border-elivion-green/30 hover:transform hover:-translate-y-2 service-card-content">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined">
+                            conversion_path
+                        </span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4">
+                        AI for Corporate Learning & Leadership
+                    </h3>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        Personalized, data-driven learning and leadership development journeys, enabling executives and teams to grow with agility and confidence.
+                    </p>
+                    </div>
+                </div>
+
+                <!-- SERVICE 3 -->
+                <div class="service-card group" data-service="2">
+                    <div class="relative p-8 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl backdrop-blur-xl transition-all duration-700 hover:border-elivion-green/30 hover:transform hover:-translate-y-2 service-card-content">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined">
+                            group_search
+                        </span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4">
+                        AI for Talent & Recruitment
+                    </h3>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        Scalable recruitment solutions powered by AI to accelerate hiring, improve candidate matching, and ensure fairness in talent acquisition.
+                    </p>
+                    </div>
+                </div>
+
+                <!-- SERVICE 4 -->
+                <div class="service-card group" data-service="3">
+                    <div class="relative p-8 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl backdrop-blur-xl transition-all duration-700 hover:border-elivion-green/30 hover:transform hover:-translate-y-2 service-card-content">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined">
+                            psychology
+                        </span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4">
+                        AI for People Development
+                    </h3>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        Continuous growth programs that use adaptive AI to personalize learning paths, foster engagement, and upskill the workforce.
+                    </p>
+                    </div>
+                </div>
+
+                <!-- SERVICE 5 -->
+                <div class="service-card group" data-service="4">
+                    <div class="relative p-8 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl backdrop-blur-xl transition-all duration-700 hover:border-elivion-green/30 hover:transform hover:-translate-y-2 service-card-content">
+                    <div class="mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-2xl flex items-center justify-center">
+                        <span class="material-symbols-outlined">
+                            interactive_space
+                        </span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4">
+                        AI Training & Workshops
+                    </h3>
+                    <p class="text-lg text-slate-300 leading-relaxed">
+                        We provide executive workshops, discovery sessions, and team trainings to build AI literacy, define use cases, and align leadership on AI strategy. Our training formats combine inspiration with hands-on practice, ensuring organizations not only understand AI but know how to apply it safely and effectively.
+                    </p>
+                    </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+.services-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.services-left {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  z-index: 2;
+}
+
+.services-right {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 5rem 4rem;
+  min-height: 300vh;
+  z-index: 1;
+}
+
+.service-card {
+  opacity: 0.3;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  view-transition-name: service-card;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.service-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card-content {
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-indicator.active {
+  transform: scale(1.05);
+  margin-left: 1rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-indicator.active .indicator-dot {
+  transform: scale(1.5);
+}
+
+.service-indicator.active .indicator-text {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  #services {
+    display: block;
+    min-height: auto;
+  }
+  .services-wrapper {
+    display: block;
+  }
+  .services-left {
+    position: static;
+    height: auto;
+    padding: 0 0 2rem 0;
+  }
+  .services-right {
+    padding: 0;
+    min-height: auto;
+    gap: 2rem;
+  }
+  
+  .service-card {
+    min-height: auto;
+  }
+  
+  .service-card-content {
+    min-height: auto;
+  }
+}
+
+</style>
+
+<script>
+
+const observerOptions = {
+  root: null,
+  rootMargin: '-20% 0px -20% 0px',
+  threshold: 0.3
+};
+
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      
+      const serviceIndex = entry.target.getAttribute('data-service');
+      document.querySelectorAll('.service-indicator').forEach(indicator => {
+        indicator.classList.remove('active');
+      });
+      const indicator = document.querySelector(`.service-indicator[data-service="${serviceIndex}"]`);
+      if (indicator) {
+        indicator.classList.add('active');
+      }
+    } else {
+      entry.target.classList.remove('in-view');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.service-card').forEach(card => {
+  cardObserver.observe(card);
+});
+
+document.querySelectorAll('.service-indicator').forEach(indicator => {
+  indicator.addEventListener('click', () => {
+    const serviceIndex = indicator.getAttribute('data-service');
+    const targetCard = document.querySelector(`.service-card[data-service="${serviceIndex}"]`);
+    
+    if (targetCard) {
+      targetCard.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
+  });
+});
+</script>
