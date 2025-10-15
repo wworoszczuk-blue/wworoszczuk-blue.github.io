@@ -1,18 +1,36 @@
 <head>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,0,0&icon_names=mail" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,0,0&icon_names=mail,menu,close" />
 </head>
 
-<header id="main-header" class="absolute top-0 left-0 w-full z-50 transition-all duration-500">
-  <div class="flex items-center justify-between max-w-7xl mx-auto px-8 py-4 lg:py-6 transition-all duration-500">
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+  <div class="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 transition-all duration-300">
     <!-- LOGO -->
-    <a href="#hero" class="text-2xl lg:text-3xl font-bold tracking-wide text-white font-logo transition-all duration-500">
+    <a href="#hero" class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-wide text-white font-logo transition-all duration-500 z-50">
       ELIVION
     </a>
 
-    <!-- CONTACT BUTTON -->
+    <!-- DESKTOP MENU - hidden on mobile -->
+    <nav class="hidden lg:flex absolute left-1/2 -translate-x-1/2 flex-row items-center gap-1 px-2 py-2 bg-elivion-green/10 border border-elivion-green/20 rounded-full text-elivion-green text-sm font-mono">
+      <a href="#services" class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200">
+        SERVICES
+      </a>
+      <a href="#strengths" class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200">
+        WHY US
+      </a>
+      <a href="#about" class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200">
+        ABOUT US
+      </a>
+    </nav>
+
+    <!-- MOBILE MENU BUTTON - visible only on mobile -->
+    <button id="mobile-menu-btn" class="lg:hidden text-white z-50 p-2" aria-label="Toggle menu">
+      <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+    </button>
+
+    <!-- CONTACT BUTTON - hidden on mobile, visible on desktop -->
     <a href="#contact"
-       class="relative inline-flex items-center px-6 py-2 lg:px-8 lg:py-3 bg-white/5 border border-white/10 text-white font-main font-semibold rounded-xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/10">
-      <span class="relative z-10 flex items-stretch">
+       class="hidden lg:inline-flex relative items-center px-6 py-2 lg:px-8 lg:py-3 bg-white/5 border border-white/10 text-white font-main font-semibold rounded-xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/10">
+      <span class="relative z-10 flex items-center">
         <span class="material-symbols-outlined pr-2">
           mail
         </span>
@@ -20,4 +38,121 @@
       </span>
     </a>
   </div>
+
+  <!-- MOBILE MENU - full screen overlay -->
+  <div id="mobile-menu" class="lg:hidden fixed inset-0 bg-black/95 backdrop-blur-md opacity-0 invisible transition-all duration-300 z-40 overflow-hidden">
+    <nav class="flex flex-col items-center justify-center h-full space-y-8 px-6">
+      <a href="#services" class="mobile-menu-link text-2xl text-elivion-green font-mono hover:text-elivion-green/80 transition-colors">
+        SERVICES
+      </a>
+      <a href="#strengths" class="mobile-menu-link text-2xl text-elivion-green font-mono hover:text-elivion-green/80 transition-colors">
+        WHY US
+      </a>
+      <a href="#about" class="mobile-menu-link text-2xl text-elivion-green font-mono hover:text-elivion-green/80 transition-colors">
+        ABOUT US
+      </a>
+      <a href="#contact" class="mobile-menu-link mt-8 inline-flex items-center px-8 py-4 bg-white/5 border border-white/10 text-white font-main font-semibold rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/10">
+        <span class="flex items-center">
+          <span class="material-symbols-outlined pr-2">
+            mail
+          </span>
+          WORK WITH US
+        </span>
+      </a>
+    </nav>
+  </div>
 </header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const menuLinks = document.querySelectorAll('.mobile-menu-link');
+  const body = document.body;
+  const header = document.getElementById('main-header');
+
+  function toggleMenu() {
+    const isOpen = mobileMenu?.classList.contains('menu-open');
+    
+    if (isOpen) {
+      // Close menu
+      mobileMenu?.classList.remove('menu-open', 'opacity-100', 'visible');
+      mobileMenu?.classList.add('opacity-0', 'invisible');
+      if (menuIcon) menuIcon.textContent = 'menu';
+      
+      // Re-enable scrolling on body
+      body.style.overflow = '';
+      body.style.position = '';
+      body.style.width = '';
+    } else {
+      // Open menu
+      mobileMenu?.classList.add('menu-open', 'opacity-100', 'visible');
+      mobileMenu?.classList.remove('opacity-0', 'invisible');
+      if (menuIcon) menuIcon.textContent = 'close';
+      
+      // Disable scrolling on body
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      body.style.width = '100%';
+    }
+  }
+
+  menuBtn?.addEventListener('click', toggleMenu);
+
+  // Close menu when clicking on a link
+  menuLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+
+  // Close menu when clicking outside
+  mobileMenu?.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      toggleMenu();
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu?.classList.contains('menu-open')) {
+      toggleMenu();
+    }
+  });
+
+  // Handle window resize - close menu if switching to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && mobileMenu?.classList.contains('menu-open')) {
+      toggleMenu();
+    }
+  });
+
+  // Handle scroll for blur effect
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 20) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
+  });
+</script>
+
+<style>
+  #mobile-menu.menu-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #main-header {
+    background: transparent;
+  }
+
+  #main-header.scrolled {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+</style>
