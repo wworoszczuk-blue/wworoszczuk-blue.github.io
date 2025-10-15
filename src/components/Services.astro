@@ -1,13 +1,11 @@
 <head>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
 <section id="services" class="relative">
-
   <div class="relative z-10 w-full">
     <div class="w-full">
-        <div class="services-wrapper">
+        <div class="services-wrapper max-w-7xl mx-auto">
         
             <!-- LEFT COLUMN -->
             <div class="services-left ml-4">
@@ -21,7 +19,7 @@
                 </div>
 
                 <!-- PROGRESS INDICATORS -->
-                <div class="mt-12 space-y-6">
+                <div class="mt-12 space-y-6 services-indicators">
                     {['Enterprise Solutions', 'Corporate Learning & Leadership', 'Talent & Recruitment', 'People Development', 'Training & Workshops'].map((service, index) => (
                     <div class="flex items-center space-x-4 group cursor-pointer service-indicator" data-service={index}>
                         <div class="flex-shrink-0 w-4 h-4 bg-slate-600 rounded-full group-[.active]:bg-elivion-green group-[.active]:scale-150 transition-all duration-500 group-[.active]:ring-4 group-[.active]:ring-emerald-400/30 indicator-dot"></div>
@@ -140,22 +138,24 @@
 </section>
 
 <style>
-
 .services-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 2rem;
   align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .services-left {
   position: sticky;
   top: 0;
-  height: 100vh;
-  padding: 5rem 4rem;
+  height: fit-content;
+  padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background: transparent;
   z-index: 2;
 }
@@ -164,7 +164,8 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  padding: 5rem 4rem;
+  padding: 5rem 2rem;
+  padding-top: 7.5rem; /* Aligns with left column content */
   min-height: 300vh;
   z-index: 1;
 }
@@ -208,38 +209,45 @@
   color: white;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   #services {
     display: block;
     min-height: auto;
   }
   .services-wrapper {
     display: block;
+    padding: 1rem;
   }
   .services-left {
     position: static;
     height: auto;
-    padding: 0 0 2rem 0;
+    padding: 2rem 1rem;
+    margin-left: 0;
+  }
+  .services-indicators {
+    display: none;
   }
   .services-right {
-    padding: 0;
+    padding: 1rem;
+    padding-top: 1rem; /* Reset for mobile */
     min-height: auto;
     gap: 2rem;
   }
   
   .service-card {
     min-height: auto;
+    opacity: 1;
+    transform: none;
   }
   
   .service-card-content {
     min-height: auto;
+    padding: 1.5rem;
   }
 }
-
 </style>
 
 <script>
-
 const observerOptions = {
   root: null,
   rootMargin: '-20% 0px -20% 0px',
