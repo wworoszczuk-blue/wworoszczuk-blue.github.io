@@ -4,6 +4,20 @@
 
 <section id="about" class="relative py-32 overflow-hidden">
 
+  <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+    <!-- FADE IN GRADIENT -->
+    <div class="absolute inset-x-0 top-0 h-32 z-10 pointer-events-none
+              bg-gradient-to-b from-elivion-bg to-transparent"></div>
+    <!-- BACKGROUND GLOW -->
+    <div
+      class="absolute inset-0 pointer-events-none z-0 
+            bg-[radial-gradient(at_10%_90%,theme(colors.elivion.blue)_30%,transparent_50%)]
+            opacity-20 blur-3xl mix-blend-screen">
+    </div> 
+    <!-- FADE OUT GRADIENT -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-elivion-bg"></div>
+  </div>
+
   <div class="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-32">
     
     <!-- HEADER -->
@@ -46,8 +60,8 @@
     <!-- QUOTE -->
     <div class="relative mb-24">
       <div class="max-w-4xl mx-auto text-center">
-        <div class="w-16 h-16 bg-elivion-green/10 rounded-2xl flex items-center justify-center mx-auto mb-8">
-          <svg class="w-8 h-8 text-elivion-green" fill="currentColor" viewBox="0 0 24 24">
+        <div class="w-16 h-16 bg-elivion-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-8">
+          <svg class="w-8 h-8 text-elivion-blue" fill="currentColor" viewBox="0 0 24 24">
             <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
           </svg>
         </div>
