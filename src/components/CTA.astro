@@ -5,8 +5,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,0,0&icon_names=mail,menu,close" />
 </head>
 
-
-<section id="contact" class="relative min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-32 py-20 overflow-hidden text-white">
+<section id="contact" class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 py-16 sm:py-20 overflow-hidden text-white">
 
   <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
     <!-- FADE IN GRADIENT -->
@@ -22,27 +21,26 @@
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-elivion-bg"></div>
   </div>
 
-  <div class="relative z-10 w-full max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+  <div class="relative z-10 w-full max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
 
       <!-- LEFT COLUMN -->
-      <div class="space-y-8">
+      <div class="space-y-6 sm:space-y-8">
         <div>
-          <span class="inline-block text-elivion-green text-sm font-mono uppercase tracking-widest mb-4">
+          <span class="inline-block text-elivion-green text-sm font-mono uppercase tracking-widest mb-3 sm:mb-4">
             Get Started
           </span>
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-header leading-tight">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-header leading-tight">
             Ready to Transform Your Organization with <span class="text-elivion-green">AI</span>?
           </h2>
         </div>
-
       </div>
 
       <!-- RIGHT COLUMN: -->
       <div class="relative">
         <!-- Form Container -->
-        <div class="relative p-8 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl backdrop-blur-xl shadow-2xl">
+        <div class="relative p-6 sm:p-8 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl backdrop-blur-xl shadow-2xl">
 
-          <form class="space-y-6" action="/submit" method="POST">
+          <form class="space-y-4 sm:space-y-6" action="/submit" method="POST">
             <div class="space-y-2">
               <label for="name" class="block text-sm font-medium text-slate-300">Full Name</label>
               <div class="relative">
@@ -88,29 +86,29 @@
             </div>
 
             <button
-            type="submit"
-            class="block mx-auto group relative flex items-center justify-center w-96 px-8 py-4 rounded-2xl font-semibold
-                  text-white bg-gradient-to-r from-emerald-400/20 via-cyan-400/20 to-emerald-400/20
-                  border border-white/10 shadow-[0_0_30px_rgba(0,255,170,0.05)]
-                  overflow-hidden transition-all duration-500 hover:scale-[1.05] hover:shadow-[0_0_45px_rgba(0,255,170,0.3)]"
-          >
-            <!-- FLASH EFFECT -->
-            <span class="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent
-                          translate-x-[-100%] group-hover:translate-x-[100%]
-                          transition-transform duration-[1.2s] ease-in-out"></span>
+              type="submit"
+              class="block mx-auto group relative flex items-center justify-center w-full max-w-80 sm:max-w-96 px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-2xl font-semibold
+                    text-white bg-gradient-to-r from-emerald-400/20 via-cyan-400/20 to-emerald-400/20
+                    border border-white/10 shadow-[0_0_30px_rgba(0,255,170,0.05)]
+                    overflow-hidden transition-all duration-500 hover:scale-[1.02] sm:hover:scale-[1.05] hover:shadow-[0_0_45px_rgba(0,255,170,0.3)]"
+            >
+              <!-- FLASH EFFECT -->
+              <span class="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent
+                            translate-x-[-100%] group-hover:translate-x-[100%]
+                            transition-transform duration-[1.2s] ease-in-out"></span>
 
-            <!-- CONTENT -->
-            <span class="relative z-10 flex items-center gap-3">
-              <span>Get in Touch</span>
-              <span
-                class="material-symbols-outlined text-xl transition-transform duration-300 ease-out
-                      group-hover:translate-x-1 group-hover:scale-110">
-                <span class="material-symbols-outlined">
-                  keyboard_double_arrow_right
+              <!-- CONTENT -->
+              <span class="relative z-10 flex items-center gap-2 sm:gap-3 text-sm sm:text-base">
+                <span>Get in Touch</span>
+                <span
+                  class="material-symbols-outlined text-lg sm:text-xl transition-transform duration-300 ease-out
+                        group-hover:translate-x-1 group-hover:scale-110">
+                  <span class="material-symbols-outlined">
+                    keyboard_double_arrow_right
+                  </span>
                 </span>
               </span>
-            </span>
-          </button>
+            </button>
           </form>
         </div>
       </div>
@@ -118,7 +116,6 @@
 </section>
 
 <style>
-
 .animate-float {
   animation: float 8s ease-in-out infinite;
 }
@@ -137,5 +134,13 @@ button, input, textarea, a {
 
 .backdrop-blur-xl {
   backdrop-filter: blur(20px);
+}
+
+/* Dodatkowe zabezpieczenie dla bardzo małych ekranów */
+@media (max-width: 360px) {
+  #contact {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 </style>
