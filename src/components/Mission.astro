@@ -79,6 +79,20 @@
   </div>
 </section>
 
+<style>
+  .animate-scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: var(--delay, 0s);
+  }
+</style>
+
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
