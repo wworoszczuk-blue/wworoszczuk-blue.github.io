@@ -2,12 +2,12 @@
 import Header from './Header.astro';
 ---
 
-<section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-8 md:px-16 lg:px-32 py-20 overflow-hidden bg-elivion-bg text-white">
+<section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-8 md:px-16 lg:px-32 py-20 overflow-hidden">
   <Header />
 
   <div aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
   <!-- BACKGROUND GLOW -->
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(58,123,213,0.3),transparent_90%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_theme(colors.elivion.blue/0.3),transparent_90%)]"></div>
 
   <!-- GRID -->
   <svg class="absolute w-full h-full opacity-60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -62,10 +62,10 @@ import Header from './Header.astro';
     </div>
 
     <!-- CTA -->
-    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up opacity-0 animation-delay-900">
+    <div class="sm:flex-row animate-fade-in-up opacity-0 animation-delay-900">
       <a href="#mission"
-        class="group relative inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold text-base
-               text-white backdrop-blur-md bg-gradient-to-r from-emerald-400/20 via-cyan-400/20 to-emerald-400/20
+        class="group relative inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold
+               backdrop-blur-md bg-gradient-to-r from-emerald-400/20 via-cyan-400/20 to-emerald-400/20
                border border-white/10 shadow-[0_0_30px_rgba(0,255,170,0.15)]
                overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_45px_rgba(0,255,170,0.3)]">
 
