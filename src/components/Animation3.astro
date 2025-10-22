@@ -1,9 +1,8 @@
----
----
-
-<div class="aspect-square bg-transparent flex items-center justify-center overflow-hidden relative border border-white/10">
+<div
+  class="aspect-square bg-transparent flex items-center justify-center overflow-hidden relative rounded-xl border border-white/10"
+>
   <div class="relative w-full h-full" id="minimal-ai-container">
-    <!-- Wejście - dane wejściowe -->
+
     <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
       <div class="input-flow">
         <div class="flow-dot" style="animation-delay: 0ms"></div>
@@ -13,7 +12,6 @@
       <div class="input-label">Input</div>
     </div>
 
-    <!-- Wyjście - wynik -->
     <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
       <div class="output-display">
         <div class="percentage-value">0%</div>
@@ -22,10 +20,11 @@
       <div class="output-label">Result</div>
     </div>
 
-    <!-- Główna struktura sieci -->
-    <div class="absolute inset-0 flex justify-between items-center px-12 py-16 neural-layers">
-      
-      <!-- Warstwa 1 -->
+    <!-- NEURAL NETWORK -->
+    <div
+      class="absolute inset-0 flex justify-between items-center px-12 py-16 neural-layers"
+    >
+      <!-- LAYER 1 -->
       <div class="flex flex-col justify-center space-y-12 neural-layer">
         <div class="ai-node" data-delay="0">
           <div class="node-orb"></div>
@@ -40,8 +39,8 @@
           <div class="node-pulse"></div>
         </div>
       </div>
-      
-      <!-- Warstwa 2 -->
+
+      <!-- LAYER 2 -->
       <div class="flex flex-col justify-center space-y-10 neural-layer">
         <div class="ai-node" data-delay="75">
           <div class="node-orb"></div>
@@ -60,8 +59,8 @@
           <div class="node-pulse"></div>
         </div>
       </div>
-      
-      <!-- Warstwa 3 -->
+
+      <!-- LAYER 3 -->
       <div class="flex flex-col justify-center space-y-12 neural-layer">
         <div class="ai-node" data-delay="150">
           <div class="node-orb"></div>
@@ -77,19 +76,20 @@
         </div>
       </div>
     </div>
-    
-    <!-- Połączenia - grubsze i wyraźniejsze -->
-    <svg class="absolute inset-0 w-full h-full pointer-events-none neural-connections" id="connections-svg"></svg>
+
+    <!-- CONNECTIONS -->
+    <svg
+      class="absolute inset-0 w-full h-full pointer-events-none neural-connections"
+      id="connections-svg"></svg>
   </div>
 </div>
 
 <style>
-  /* Wejście - przepływ danych */
   .input-flow {
     position: relative;
     width: 4px;
     height: 80px;
-    background: rgba(99, 201, 121, 0.2);
+    background: #3a7bd55d;
     border-radius: 2px;
     overflow: hidden;
   }
@@ -105,43 +105,42 @@
     box-shadow: 0 0 8px rgba(99, 201, 121, 0.8);
   }
 
-  .input-label, .output-label {
+  .input-label,
+  .output-label {
     font-size: 10px;
-    font-family: 'Space Grotesk', sans-serif;
-    color: #63C979;
+    font-family: "Space Grotesk", sans-serif;
+    color: #63c979;
     text-align: center;
     margin-top: 8px;
     opacity: 0.7;
     font-weight: 500;
   }
 
-  /* Wyjście - wyświetlacz wyniku */
   .output-display {
     text-align: center;
     padding: 12px 8px;
     background: #3a7bd523;
-    border: 1px solid #3a7bd563;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     min-width: 60px;
   }
 
   .percentage-value {
     font-size: 18px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
-    color: #63C979;
+    color: #63c979;
     line-height: 1;
   }
 
   .match-label {
     font-size: 9px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     color: rgba(99, 201, 121, 0.8);
     margin-top: 2px;
     letter-spacing: 0.5px;
   }
 
-  /* Node'y - większe i wyraźniejsze */
   .ai-node {
     position: relative;
     width: 60px;
@@ -155,8 +154,8 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #63C979;
-    box-shadow: 
+    background: #63c979;
+    box-shadow:
       0 0 20px rgba(99, 201, 121, 0.8),
       inset 0 1px 0 rgba(255, 255, 255, 0.4);
     position: relative;
@@ -169,12 +168,11 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: rgba(99, 201, 121, 0.3);
+    background: #3a7bd55d;
     animation: node-pulse 2.5s ease-out infinite;
     z-index: 1;
   }
 
-  /* Animacje */
   @keyframes flow-up {
     0% {
       top: 100%;
@@ -193,7 +191,8 @@
   }
 
   @keyframes node-pulse {
-    0%, 100% {
+    0%,
+    100% {
       transform: scale(1);
       opacity: 0.3;
     }
@@ -229,11 +228,10 @@
     }
   }
 
-  /* Stany aktywne */
   .node-active .node-orb {
     transform: scale(1.6);
-    background: #3A7BD5;
-    box-shadow: 
+    background: #3a7bd5;
+    box-shadow:
       0 0 25px rgba(58, 123, 213, 0.9),
       inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
@@ -249,31 +247,31 @@
     animation: percentage-count 0.5s ease-out;
   }
 
-  /* Gradient dla połączeń */
   .connection-gradient {
-    stop-color: #63C979;
+    stop-color: #63c979;
   }
-  
+
   .connection-gradient-stop {
-    stop-color: #3A7BD5;
+    stop-color: #3a7bd5;
   }
 </style>
 
 <script>
-  (function() {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initMinimalAI);
+  // NEURAL NETWORK VISUALIZATION
+  (function () {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initMinimalAI);
     } else {
       setTimeout(initMinimalAI, 100);
     }
 
     function initMinimalAI() {
-      const container = document.getElementById('minimal-ai-container');
+      const container = document.getElementById("minimal-ai-container");
       if (!container) return;
 
-      const svg = container.querySelector('#connections-svg');
-      const layers = container.querySelectorAll('.neural-layer');
-      const percentageValue = container.querySelector('.percentage-value');
+      const svg = container.querySelector("#connections-svg");
+      const layers = container.querySelectorAll(".neural-layer");
+      const percentageValue = container.querySelector(".percentage-value");
 
       if (!svg || layers.length === 0 || !percentageValue) return;
 
@@ -283,10 +281,10 @@
 
       function initializeAnimations() {
         if (isInitialized) return;
-        
+
         createConnections();
         setupNodeDelays();
-        
+
         setTimeout(() => {
           startFlowAnimation();
         }, 1000);
@@ -295,77 +293,97 @@
         isInitialized = true;
       }
 
+      //Draw SVG lines connecting each node
       function createConnections() {
-        svg.innerHTML = '';
+        svg!.innerHTML = "";
 
-        // Dodaj gradient do SVG
-        const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-        const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-        gradient.setAttribute('id', 'gradient');
-        gradient.setAttribute('x1', '0%');
-        gradient.setAttribute('y1', '0%');
-        gradient.setAttribute('x2', '100%');
-        gradient.setAttribute('y2', '0%');
-        
-        const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-        stop1.setAttribute('class', 'connection-gradient');
-        stop1.setAttribute('offset', '0%');
-        
-        const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-        stop2.setAttribute('class', 'connection-gradient-stop');
-        stop2.setAttribute('offset', '100%');
-        
+        const defs = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "defs"
+        );
+        const gradient = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "linearGradient"
+        );
+        gradient.setAttribute("id", "gradient");
+        gradient.setAttribute("x1", "0%");
+        gradient.setAttribute("y1", "0%");
+        gradient.setAttribute("x2", "100%");
+        gradient.setAttribute("y2", "0%");
+
+        const stop1 = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "stop"
+        );
+        stop1.setAttribute("class", "connection-gradient");
+        stop1.setAttribute("offset", "0%");
+
+        const stop2 = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "stop"
+        );
+        stop2.setAttribute("class", "connection-gradient-stop");
+        stop2.setAttribute("offset", "100%");
+
         gradient.appendChild(stop1);
         gradient.appendChild(stop2);
         defs.appendChild(gradient);
-        svg.appendChild(defs);
-        
-        const nodes = Array.from(layers).map(layer => 
-          Array.from(layer.querySelectorAll('.ai-node'))
+        svg!.appendChild(defs);
+
+        const nodes = Array.from(layers).map((layer) =>
+          Array.from(layer.querySelectorAll(".ai-node"))
         );
 
         for (let i = 0; i < nodes.length - 1; i++) {
           const currentLayer = nodes[i];
           const nextLayer = nodes[i + 1];
 
-          currentLayer.forEach(startNode => {
-            nextLayer.forEach(endNode => {
-              createConnection(startNode, endNode);
+          currentLayer.forEach((startNode) => {
+            nextLayer.forEach((endNode) => {
+              createConnection(startNode as HTMLElement, endNode as HTMLElement);
             });
           });
         }
       }
 
-      function createConnection(startNode, endNode) {
+      // Draw one SVG line between two nodes
+      function createConnection(startNode: HTMLElement, endNode: HTMLElement) {
+        if (!container) return;
         const startRect = startNode.getBoundingClientRect();
         const endRect = endNode.getBoundingClientRect();
         const containerRect = container.getBoundingClientRect();
 
-        const startX = startRect.left + startRect.width / 2 - containerRect.left;
+        // Calculate center points of each node
+        const startX =
+          startRect.left + startRect.width / 2 - containerRect.left;
         const startY = startRect.top + startRect.height / 2 - containerRect.top;
         const endX = endRect.left + endRect.width / 2 - containerRect.left;
         const endY = endRect.top + endRect.height / 2 - containerRect.top;
 
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', startX.toString());
-        line.setAttribute('y1', startY.toString());
-        line.setAttribute('x2', endX.toString());
-        line.setAttribute('y2', endY.toString());
-        line.setAttribute('stroke', 'rgba(99, 201, 121, 0.15)');
-        line.setAttribute('stroke-width', '2');
-        line.classList.add('neural-connection');
+        const line = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "line"
+        );
+        line.setAttribute("x1", startX.toString());
+        line.setAttribute("y1", startY.toString());
+        line.setAttribute("x2", endX.toString());
+        line.setAttribute("y2", endY.toString());
+        line.setAttribute("stroke", "rgba(99, 201, 121, 0.15)");
+        line.setAttribute("stroke-width", "2");
+        line.classList.add("neural-connection");
 
-        svg.appendChild(line);
+        svg!.appendChild(line);
       }
 
       function startFlowAnimation() {
-        const connections = Array.from(svg.querySelectorAll('.neural-connection'));
-        const allNodes = Array.from(container.querySelectorAll('.ai-node'));
-        
+        const connections = Array.from(
+          svg!.querySelectorAll(".neural-connection")
+        );
+        const allNodes = Array.from(container!.querySelectorAll(".ai-node"));
+
         if (connections.length === 0) return;
 
-        // Reset
-        allNodes.forEach(node => node.classList.remove('node-active'));
+        allNodes.forEach((node) => node.classList.remove("node-active"));
         currentPercentage = 0;
         updatePercentage(0);
 
@@ -374,30 +392,33 @@
 
         connections.forEach((connection, index) => {
           setTimeout(() => {
-            connection.classList.add('connection-active');
-            
-            const startNode = findNodeForConnection(connection, 'start');
-            const endNode = findNodeForConnection(connection, 'end');
-            
-            if (startNode) startNode.classList.add('node-active');
-            if (endNode) endNode.classList.add('node-active');
-            
-            // Aktualizuj procent
+            connection.classList.add("connection-active");
+
+            const startNode = findNodeForConnection(connection, "start");
+            const endNode = findNodeForConnection(connection, "end");
+
+            if (startNode) startNode.classList.add("node-active");
+            if (endNode) endNode.classList.add("node-active");
+
             completedConnections++;
-            const newPercentage = Math.min(95, Math.round((completedConnections / totalConnections) * 100));
+            const newPercentage = Math.min(
+              95,
+              Math.round((completedConnections / totalConnections) * 100)
+            );
             updatePercentage(newPercentage);
-            
+
             setTimeout(() => {
-              connection.classList.remove('connection-active');
-              
+              connection.classList.remove("connection-active");
+
               if (index === connections.length - 1) {
-                // Finalny wynik - random między 87-98%
                 setTimeout(() => {
                   const finalPercentage = 87 + Math.floor(Math.random() * 12);
                   updatePercentage(finalPercentage);
-                  
+
                   setTimeout(() => {
-                    allNodes.forEach(node => node.classList.remove('node-active'));
+                    allNodes.forEach((node) =>
+                      node.classList.remove("node-active")
+                    );
                   }, 1000);
                 }, 500);
               }
@@ -406,46 +427,59 @@
         });
       }
 
-      function updatePercentage(value) {
+      function updatePercentage(value: number): void {
+        if (!percentageValue) return;
         currentPercentage = value;
-        percentageValue.textContent = value + '%';
-        percentageValue.classList.add('percentage-animate');
-        
+        percentageValue.textContent = value + "%";
+        percentageValue.classList.add("percentage-animate");
+
         setTimeout(() => {
-          percentageValue.classList.remove('percentage-animate');
+          percentageValue.classList.remove("percentage-animate");
         }, 500);
       }
 
-      function findNodeForConnection(connection, position) {
-        const x = position === 'start' ? connection.getAttribute('x1') : connection.getAttribute('x2');
-        const y = position === 'start' ? connection.getAttribute('y1') : connection.getAttribute('y2');
-        
-        const nodes = Array.from(container.querySelectorAll('.ai-node'));
-        
-        return nodes.find(node => {
+      function findNodeForConnection(connection: Element, position: "start" | "end"): Element | undefined {
+        if (!container) return undefined;
+        const x =
+          position === "start"
+            ? connection.getAttribute("x1")
+            : connection.getAttribute("x2");
+        const y =
+          position === "start"
+            ? connection.getAttribute("y1")
+            : connection.getAttribute("y2");
+
+        const nodes = Array.from(container.querySelectorAll(".ai-node"));
+
+        return nodes.find((node) => {
           const rect = node.getBoundingClientRect();
           const containerRect = container.getBoundingClientRect();
           const nodeX = rect.left + rect.width / 2 - containerRect.left;
           const nodeY = rect.top + rect.height / 2 - containerRect.top;
-          
-          return Math.abs(nodeX - parseFloat(x)) < 10 && Math.abs(nodeY - parseFloat(y)) < 10;
+
+          return (
+            Math.abs(nodeX - parseFloat(x ?? "0")) < 10 &&
+            Math.abs(nodeY - parseFloat(y ?? "0")) < 10
+          );
         });
       }
 
       function setupNodeDelays() {
-        container.querySelectorAll('.ai-node').forEach(node => {
-          const delay = node.getAttribute('data-delay');
+        if (!container) return;
+        container.querySelectorAll(".ai-node").forEach((node) => {
+          const delay = node.getAttribute("data-delay");
           if (delay) {
-            const pulse = node.querySelector('.node-pulse');
+            const pulse = node.querySelector(".node-pulse");
             if (pulse) {
-              pulse.style.animationDelay = `${delay}ms`;
+              (pulse as HTMLElement).style.animationDelay = `${delay}ms`;
             }
           }
         });
       }
 
-      let resizeTimeout;
-      window.addEventListener('resize', () => {
+      // When window is resized, redraw all connections to match new positions
+      let resizeTimeout: ReturnType<typeof setTimeout> | undefined;
+      window.addEventListener("resize", () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
           createConnections();

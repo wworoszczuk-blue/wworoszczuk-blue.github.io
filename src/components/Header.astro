@@ -1,61 +1,104 @@
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  />
 </head>
 
-<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
-  <div class="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 transition-all duration-300">
+<header
+  id="main-header"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent"
+>
+  <div
+    class="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6 transition-all duration-300"
+  >
     <!-- LOGO -->
-    <a href="/" class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-wide text-white font-logo transition-all duration-500 z-50">
+    <a
+      href="/"
+      class="text-xl sm:text-2xl lg:text-3xl font-bold tracking-wide text-white font-logo transition-all duration-500 z-50"
+    >
       ELIVION
     </a>
 
     <!-- DESKTOP MENU - hidden on mobile -->
-    <nav class="hidden lg:flex absolute left-1/2 -translate-x-1/2 flex-row items-center gap-1 px-2 py-2 bg-elivion-blue/10 border border-white/20 rounded-full text-sm font-header">
-      <a href="#services" class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200 hover:text-elivion-green font-bold">
+    <nav
+      class="hidden lg:flex absolute left-1/2 -translate-x-1/2 flex-row items-center gap-1 px-2 py-2 bg-elivion-blue/10 border border-white/20 rounded-full text-sm font-header"
+    >
+      <a
+        href="#services"
+        class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200 hover:text-elivion-green font-bold"
+      >
         SERVICES
       </a>
-      <a href="#strengths" class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200 hover:text-elivion-green font-bold">
+      <a
+        href="#strengths"
+        class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200 hover:text-elivion-green font-bold"
+      >
         WHY US
       </a>
-      <a href="#about" class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200 hover:text-elivion-green font-bold">
+      <a
+        href="#about"
+        class="px-4 py-1.5 rounded-full hover:bg-elivion-green/10 transition-all duration-200 hover:text-elivion-green font-bold"
+      >
         ABOUT US
       </a>
     </nav>
 
     <!-- MOBILE MENU BUTTON - visible only on mobile -->
-    <button id="mobile-menu-btn" class="lg:hidden z-50 p-2" aria-label="Toggle menu" type="button">
-      <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden z-50 p-2"
+      aria-label="Toggle menu"
+      type="button"
+    >
+      <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span
+      >
     </button>
 
     <!-- CONTACT BUTTON - hidden on mobile, visible on desktop -->
-    <a href="#contact"
-       class="hidden lg:inline-flex relative items-center px-6 py-2 lg:px-8 lg:py-3 bg-elivion-blue/10 border border-white/20 font-header font-bold rounded-full backdrop-blur-sm overflow-hidden transition-all duration-300 hover:text-elivion-green hover:scale-105">
+    <a
+      href="#contact"
+      class="hidden lg:inline-flex relative items-center px-6 py-2 lg:px-8 lg:py-3 bg-elivion-blue/10 border border-white/20 font-header font-bold rounded-full backdrop-blur-sm overflow-hidden transition-all duration-300 hover:text-elivion-green hover:scale-105"
+    >
       <span class="relative z-10 flex items-center">
-        <span class="material-symbols-outlined pr-2">
-          mail
-        </span>
+        <span class="material-symbols-outlined pr-2"> mail </span>
         WORK WITH US
       </span>
     </a>
   </div>
 
   <!-- MOBILE MENU - full screen overlay -->
-  <div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-screen bg-elivion-bg/95 backdrop-blur-md opacity-0 invisible transition-all duration-300 z-40 overflow-hidden">
-    <nav class="flex flex-col items-center justify-center h-full space-y-9 px-6 pt-20 pb-8">
-      <a href="#services" class="mobile-menu-link text-2xl text-elivion-green font-header font-bold hover:text-elivion-green/80 transition-colors">
+  <div
+    id="mobile-menu"
+    class="lg:hidden fixed top-0 left-0 w-full h-screen bg-elivion-bg/95 backdrop-blur-md opacity-0 invisible transition-all duration-300 z-40 overflow-hidden"
+  >
+    <nav
+      class="flex flex-col items-center justify-center h-full space-y-9 px-6 pt-20 pb-8"
+    >
+      <a
+        href="#services"
+        class="mobile-menu-link text-2xl text-elivion-green font-header font-bold hover:text-elivion-green/80 transition-colors"
+      >
         SERVICES
       </a>
-      <a href="#strengths" class="mobile-menu-link text-2xl text-elivion-green font-header font-bold hover:text-elivion-green/80 transition-colors">
+      <a
+        href="#strengths"
+        class="mobile-menu-link text-2xl text-elivion-green font-header font-bold hover:text-elivion-green/80 transition-colors"
+      >
         WHY US
       </a>
-      <a href="#about" class="mobile-menu-link text-2xl text-elivion-green font-header font-bold hover:text-elivion-green/80 transition-colors">
+      <a
+        href="#about"
+        class="mobile-menu-link text-2xl text-elivion-green font-header font-bold hover:text-elivion-green/80 transition-colors"
+      >
         ABOUT US
       </a>
-      <a href="#contact" class="mobile-menu-link mt-8 inline-flex items-center px-8 py-4 bg-elivion-blue/10 border border-white/20 font-header font-semibold rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105">
+      <a
+        href="#contact"
+        class="mobile-menu-link mt-8 inline-flex items-center px-8 py-4 bg-elivion-blue/10 border border-white/20 font-header font-semibold rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105"
+      >
         <span class="flex items-center">
-          <span class="material-symbols-outlined pr-2">
-            mail
-          </span>
+          <span class="material-symbols-outlined pr-2"> mail </span>
           WORK WITH US
         </span>
       </a>
@@ -64,40 +107,40 @@
 </header>
 
 <script>
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const menuLinks = document.querySelectorAll('.mobile-menu-link');
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const menuLinks = document.querySelectorAll(".mobile-menu-link");
   const body = document.body;
-  const header = document.getElementById('main-header')!;
+  const header = document.getElementById("main-header")!;
 
   let isMenuOpen = false;
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
-    
+
     if (isMenuOpen) {
-      mobileMenu?.classList.remove('opacity-0', 'invisible');
-      mobileMenu?.classList.add('opacity-100', 'visible');
-      if (menuIcon) menuIcon.textContent = 'close';
-      
-      body.style.overflow = 'hidden'; // Disable scrolling on body
+      mobileMenu?.classList.remove("opacity-0", "invisible");
+      mobileMenu?.classList.add("opacity-100", "visible");
+      if (menuIcon) menuIcon.textContent = "close";
+
+      body.style.overflow = "hidden"; // Disable scrolling on body
     } else {
-      mobileMenu?.classList.add('opacity-0', 'invisible');
-      mobileMenu?.classList.remove('opacity-100', 'visible');
-      if (menuIcon) menuIcon.textContent = 'menu';
-      
-      body.style.overflow = ''; // Re-enable scrolling on body
+      mobileMenu?.classList.add("opacity-0", "invisible");
+      mobileMenu?.classList.remove("opacity-100", "visible");
+      if (menuIcon) menuIcon.textContent = "menu";
+
+      body.style.overflow = ""; // Re-enable scrolling on body
     }
   }
 
-  menuBtn?.addEventListener('click', (e) => {
+  menuBtn?.addEventListener("click", (e) => {
     e.preventDefault();
     toggleMenu();
   });
 
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
       if (isMenuOpen) {
         toggleMenu();
       }
@@ -105,14 +148,14 @@
   });
 
   // Handle ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isMenuOpen) {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isMenuOpen) {
       toggleMenu();
     }
   });
 
   // Handle window resize
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     if (window.innerWidth >= 1024 && isMenuOpen) {
       toggleMenu();
     }
@@ -120,15 +163,15 @@
 
   // Blur on header after scroll
   let lastScroll = 0;
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 20) {
-      header.classList.add('bg-white/5', 'backdrop-blur-xl');
+      header.classList.add("bg-white/5", "backdrop-blur-xl");
     } else {
-       header.classList.remove('bg-white/5', 'backdrop-blur-xl');
+      header.classList.remove("bg-white/5", "backdrop-blur-xl");
     }
-    
+
     lastScroll = currentScroll;
   });
 </script>

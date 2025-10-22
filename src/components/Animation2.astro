@@ -1,19 +1,8 @@
----
----
-
-<div class="aspect-square  rounded-xl flex items-center justify-center overflow-hidden relative border border-white/10">
-  <!-- Tło z siatką -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="w-full h-full" style="
-      background-image: 
-        linear-gradient(rgba(99, 201, 121, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99, 201, 121, 0.1) 1px, transparent 1px);
-      background-size: 40px 40px;
-    "></div>
-  </div>
-
+<div
+  class="aspect-square rounded-xl flex items-center justify-center overflow-hidden relative border border-white/10"
+>
   <div class="relative w-full h-full" id="talent-ai-container">
-    <!-- Główny okrąg - symbol równych szans -->
+    <!-- MAIN CIRCLE -->
     <div class="absolute inset-0 flex items-center justify-center">
       <div class="fairness-circle">
         <div class="circle-ring"></div>
@@ -28,7 +17,7 @@
       </div>
     </div>
 
-    <!-- Kandydaci wchodzący do systemu -->
+    <!-- UPCOMING CANDIDATES -->
     <div class="absolute left-6 top-1/2 transform -translate-y-1/2">
       <div class="candidates-input">
         <div class="candidate-avatar" style="--delay: 0ms"></div>
@@ -38,7 +27,7 @@
       </div>
     </div>
 
-    <!-- Wyjście - personalizowane wyniki -->
+    <!-- OUTPUT - PERSONALIZED FEEDBACK  -->
     <div class="absolute right-6 top-1/2 transform -translate-y-1/2">
       <div class="results-output">
         <div class="feedback-bubble" style="--delay: 0ms">
@@ -54,7 +43,7 @@
       </div>
     </div>
 
-    <!-- Elementy grywalizacji -->
+    <!-- GAMIFICATION ELEMENTS -->
     <div class="absolute top-6 left-1/2 transform -translate-x-1/2">
       <div class="gamification-elements">
         <div class="game-badge" data-completed="true">
@@ -69,7 +58,7 @@
       </div>
     </div>
 
-    <!-- Progresja umiejętności -->
+    <!-- SKILLS -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
       <div class="skills-progress">
         <div class="skill-track">
@@ -90,7 +79,6 @@
 </div>
 
 <style>
-  /* Główny okrąg równych szans */
   .fairness-circle {
     position: relative;
     width: 180px;
@@ -111,7 +99,7 @@
     border: 1px solid #3a7bd52d;
     border-radius: 50%;
     background: #3a7bd539;
-    box-shadow: 
+    box-shadow:
       inset 0 0 30px rgba(99, 201, 121, 0.1),
       0 0 40px rgba(99, 201, 121, 0.1);
   }
@@ -129,16 +117,12 @@
     border-radius: 50%;
     top: 50%;
     left: 50%;
-    transform: 
-      translate(-50%, -50%) 
-      rotate(var(--angle)) 
-      translateX(70px) 
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(70px)
       rotate(calc(-1 * var(--angle)));
     animation: dot-orbit 8s linear infinite;
     box-shadow: 0 0 12px rgba(99, 201, 121, 0.8);
   }
 
-  /* Wejście kandydatów */
   .candidates-input {
     position: relative;
     text-align: center;
@@ -147,7 +131,7 @@
   .candidate-avatar {
     width: 24px;
     height: 24px;
-    background: #3A7BD5;
+    background: #3a7bd5;
     border-radius: 50%;
     margin-bottom: 8px;
     opacity: 0;
@@ -156,7 +140,6 @@
     box-shadow: 0 0 15px #3a7bd548;
   }
 
-  /* Wyjście - feedback */
   .results-output {
     position: relative;
     text-align: center;
@@ -179,13 +162,12 @@
 
   .feedback-text {
     font-size: 9px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-weight: 600;
-    color: #63C979;
+    color: #63c979;
     letter-spacing: 0.5px;
   }
 
-  /* Elementy grywalizacji */
   .gamification-elements {
     display: flex;
     gap: 12px;
@@ -221,7 +203,6 @@
     transform: scale(1.1);
   }
 
-  /* Progresja umiejętności */
   .skills-progress {
     display: flex;
     gap: 16px;
@@ -235,7 +216,7 @@
   .skill-progress {
     width: 100%;
     height: 4px;
-    background: rgba(99, 201, 121, 0.2);
+    background: #3a7bd55d;
     border-radius: 2px;
     margin-bottom: 4px;
     overflow: hidden;
@@ -243,7 +224,7 @@
   }
 
   .skill-progress::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
@@ -268,21 +249,21 @@
 
   .skill-label {
     font-size: 8px;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     color: rgba(99, 201, 121, 0.7);
     font-weight: 500;
   }
 
-  .input-label, .output-label {
+  .input-label,
+  .output-label {
     font-size: 10px;
-    font-family: 'Space Grotesk', sans-serif;
-    color: #63C979;
+    font-family: "Space Grotesk", sans-serif;
+    color: #63c979;
     margin-top: 8px;
     opacity: 0.7;
     font-weight: 500;
   }
 
-  /* Animacje */
   @keyframes ring-rotate {
     from {
       transform: rotate(0deg);
@@ -294,18 +275,12 @@
 
   @keyframes dot-orbit {
     from {
-      transform: 
-        translate(-50%, -50%) 
-        rotate(var(--angle)) 
-        translateX(70px) 
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateX(70px)
         rotate(calc(-1 * var(--angle)));
     }
     to {
-      transform: 
-        translate(-50%, -50%) 
-        rotate(calc(var(--angle) + 360deg)) 
-        translateX(70px) 
-        rotate(calc(-1 * var(--angle) - 360deg));
+      transform: translate(-50%, -50%) rotate(calc(var(--angle) + 360deg))
+        translateX(70px) rotate(calc(-1 * var(--angle) - 360deg));
     }
   }
 
@@ -329,11 +304,13 @@
   }
 
   @keyframes feedback-appear {
-    0%, 60% {
+    0%,
+    60% {
       opacity: 0;
       transform: scale(0.8);
     }
-    70%, 90% {
+    70%,
+    90% {
       opacity: 1;
       transform: scale(1);
     }
@@ -344,7 +321,8 @@
   }
 
   @keyframes skill-fill {
-    0%, 100% {
+    0%,
+    100% {
       left: -100%;
     }
     50% {
@@ -352,55 +330,55 @@
     }
   }
 
-  /* Interakcje */
   .game-badge {
     cursor: pointer;
   }
 
   .game-badge:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(99, 201, 121, 0.5);
+    box-shadow: 0 0 20px #3a7bd55d;
   }
 </style>
 
 <script>
-  (function() {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initTalentAI);
+  // TALENT AI VISUALIZATION
+  (function () {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initTalentAI);
     } else {
       setTimeout(initTalentAI, 100);
     }
 
     function initTalentAI() {
-      const container = document.getElementById('talent-ai-container');
+      const container = document.getElementById("talent-ai-container");
       if (!container) return;
 
-      const badges = container.querySelectorAll('.game-badge');
-      let currentBadge = 0;
+      const badges = container.querySelectorAll(".game-badge");
+      let currentBadge = 0; // Track which badge should be highlighted next in the rotation
 
-      // Rotacja odznak grywalizacji
       function rotateBadges() {
-        badges.forEach(badge => badge.setAttribute('data-completed', 'false'));
-        
+        badges.forEach((badge) =>
+          badge.setAttribute("data-completed", "false")
+        );
+
         if (currentBadge < badges.length) {
-          badges[currentBadge].setAttribute('data-completed', 'true');
+          badges[currentBadge].setAttribute("data-completed", "true");
           currentBadge++;
         } else {
+          // loop back to the beginning
           currentBadge = 0;
-          badges[0].setAttribute('data-completed', 'true');
+          badges[0].setAttribute("data-completed", "true");
         }
       }
 
-      // Start animacji
       setTimeout(() => {
         setInterval(rotateBadges, 2000);
       }, 1000);
 
-      // Interaktywne odznaki
       badges.forEach((badge, index) => {
-        badge.addEventListener('click', () => {
-          badges.forEach(b => b.setAttribute('data-completed', 'false'));
-          badge.setAttribute('data-completed', 'true');
+        badge.addEventListener("click", () => {
+          badges.forEach((b) => b.setAttribute("data-completed", "false"));
+          badge.setAttribute("data-completed", "true");
           currentBadge = index;
         });
       });
